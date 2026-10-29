@@ -16,11 +16,20 @@
 
 ## 🙋 关于我
 
-| 💡 我是谁 | 🚀 我在做什么 |
-| :--- | :--- |
-| 🐍 主用 **Python**:脚本自动化、数据处理、爬虫、AI 小实验 | 🌱 正在补基础:数据结构与算法、操作系统、计算机网络 |
-| ⚙️ 同时在学 **C / C++**:算法实现、内存与底层原理 | 🎯 短期目标:稳定输出项目,把算法基础打扎实 |
-| 💬 欢迎交流 Python / C++ / 学习方法 | 📚 学习笔记:[Git 使用方法与说明](GIT_GUIDE.md) |
+<table align="center">
+  <tr>
+    <td align="left" valign="top">🐍 主用 <b>Python</b>:脚本自动化、数据处理、爬虫、AI 小实验</td>
+    <td align="left" valign="top">🌱 正在补基础:数据结构与算法、操作系统、计算机网络</td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">⚙️ 同时在学 <b>C / C++</b>:算法实现、内存与底层原理</td>
+    <td align="left" valign="top">🎯 短期目标:稳定输出项目,把算法基础打扎实</td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">💬 欢迎交流 Python / C++ / 学习方法</td>
+    <td align="left" valign="top">📚 学习笔记:<a href="GIT_GUIDE.md">Git 使用方法</a> · <a href="GITHUB_GUIDE.md">GitHub 入门指南</a></td>
+  </tr>
+</table>
 
 > 把学过的东西写成代码,把写过的代码放上来。
 
@@ -28,11 +37,39 @@
 
 ## 🛠 技术栈
 
-| 分类 | 技术 |
-| :--- | :--- |
-| **语言** | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" /> <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" /> |
-| **工具** | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /> <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" /> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" /> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" /> |
-| **学习中** | <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" /> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" /> |
+<table align="center">
+  <tr>
+    <th align="center">分类</th>
+    <th align="center">技术</th>
+  </tr>
+  <tr>
+    <td align="center"><b>语言</b></td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+      <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C" />
+      <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+      <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>工具</b></td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+      <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
+      <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+      <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>学习中</b></td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
+      <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" />
+      <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -51,12 +88,33 @@
 
 ## 🚀 项目
 
-| 项目 | 简介 | 技术栈 |
-| :--- | :--- | :--- |
-| [Linmingyi](https://github.com/Liinmingyi/Liinmingyi) | 个人主页与学习笔记(本仓库) | Markdown |
-| [Git 使用方法与说明](GIT_GUIDE.md) | 常用命令速查、分支工作流、冲突处理 | Git · Markdown |
-| _待补充_ | 第一个练手项目:Python 脚本 / 算法题解 | Python |
-| _待补充_ | C/C++ 课程设计或数据结构实现 | C++ |
+<table align="center">
+  <tr>
+    <th align="left">项目</th>
+    <th align="left">简介</th>
+    <th align="left">技术栈</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/Liinmingyi/Liinmingyi">Linmingyi</a></td>
+    <td align="left">个人主页与学习笔记(本仓库)</td>
+    <td align="left">Markdown</td>
+  </tr>
+  <tr>
+    <td align="left"><a href="GIT_GUIDE.md">Git 使用方法与说明</a></td>
+    <td align="left">常用命令速查、分支工作流、冲突处理</td>
+    <td align="left">Git · Markdown</td>
+  </tr>
+  <tr>
+    <td align="left"><a href="GITHUB_GUIDE.md">GitHub 新手入门指南</a></td>
+    <td align="left">GitHub 的作用、核心概念、首次推送与主题设置</td>
+    <td align="left">GitHub · Markdown</td>
+  </tr>
+  <tr>
+    <td align="left"><i>待补充</i></td>
+    <td align="left">第一个练手项目:Python 脚本 / 算法题解</td>
+    <td align="left">Python</td>
+  </tr>
+</table>
 
 ---
 
