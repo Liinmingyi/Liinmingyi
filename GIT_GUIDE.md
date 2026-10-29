@@ -224,5 +224,199 @@ git remote set-url origin git@github.com:<用户名>/<仓库名>.git  # 切换�
 
 ---
 
+## 15. 附录:Git 命令速查表
+
+### 15.1 配置与帮助
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git config --list --show-origin` | 查看全部配置及其来源文件 |
+| `git config --global user.name "名字"` | 设置全局提交用户名 |
+| `git config --local user.email "邮箱"` | 仅对当前仓库设置邮箱 |
+| `git config --global --unset <键>` | 删除某项配置 |
+| `git config --global init.defaultBranch main` | 新建仓库默认分支名 |
+| `git help <命令>` / `git <命令> -h` | 查看命令帮助 |
+
+常用别名(设置后可用 `git st`、`git lg` 等):
+
+```bash
+git config --global alias.st  status
+git config --global alias.co  checkout
+git config --global alias.br  branch
+git config --global alias.ci  commit
+git config --global alias.last "log -1 HEAD"
+git config --global alias.lg  "log --oneline --graph --decorate --all"
+```
+
+### 15.2 仓库创建与克隆
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git init` | 在当前目录初始化仓库 |
+| `git init <目录>` | 在指定目录初始化仓库 |
+| `git clone <url>` | 克隆远程仓库 |
+| `git clone <url> <目录>` | 克隆到指定目录 |
+| `git clone --depth 1 <url>` | 浅克隆,只取最近一次提交 |
+| `git clone -b <分支> <url>` | 克隆并检出指定分支 |
+
+### 15.3 状态与差异
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git status` | 查看工作区状态 |
+| `git status -sb` | 精简状态 + 当前分支 |
+| `git diff` | 工作区 vs 暂存区 |
+| `git diff --staged` | 暂存区 vs 最新提交 |
+| `git diff <版本A>..<版本B>` | 两个提交/分支之间的差异 |
+| `git diff --stat` | 只显示改动文件与行数统计 |
+
+### 15.4 暂存、提交与文件管理
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git add <文件>` | 暂存指定文件 |
+| `git add -A` | 暂存全部改动(含新增与删除) |
+| `git add -p` | 交互式按代码块暂存 |
+| `git commit -m "说明"` | 提交并附带说明 |
+| `git commit -am "说明"` | 暂存已跟踪文件并提交 |
+| `git commit --amend` | 修改最后一次提交(信息或补文件) |
+| `git commit --allow-empty -m "说明"` | 生成空提交(常用于触发 CI) |
+| `git rm <文件>` | 删除文件并暂存删除动作 |
+| `git rm --cached <文件>` | 停止跟踪但保留磁盘文件 |
+| `git mv <旧路径> <新路径>` | 重命名或移动文件 |
+
+### 15.5 查看历史
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git log --oneline` | 一行式提交历史 |
+| `git log --oneline --graph --all` | 图形化展示所有分支 |
+| `git log -n 5` | 只看最近 5 条 |
+| `git log --author="名字"` | 按作者筛选 |
+| `git log --since="2 weeks ago"` | 按时间筛选 |
+| `git log -p <文件>` | 某文件的逐次改动详情 |
+| `git show <哈希>` | 查看某次提交的完整内容 |
+| `git show <哈希>:<文件>` | 查看该提交下的文件内容 |
+| `git blame <文件>` | 逐行追溯作者与提交 |
+| `git reflog` | HEAD 移动记录,误 reset 后的救命命令 |
+| `git shortlog -sn` | 按作者统计提交次数 |
+
+### 15.6 分支与合并
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git branch` | 列出本地分支 |
+| `git branch -a` | 列出本地 + 远程分支 |
+| `git branch -v` | 列出分支及各自最新提交 |
+| `git branch <名称>` | 新建分支(不切换) |
+| `git switch <名称>` / `git checkout <名称>` | 切换分支 |
+| `git switch -c <名称>` | 新建并切换 |
+| `git switch -c <新分支> <起点>` | 从指定提交/分支拉出新分支 |
+| `git switch --detach <哈希>` | 临时检出某次提交(游离 HEAD) |
+| `git branch -d <名称>` | 删除已合并的分支 |
+| `git branch -D <名称>` | 强制删除未合并分支 |
+| `git branch -m <旧名> <新名>` | 重命名分支 |
+| `git merge <分支>` | 将目标分支合并进当前分支 |
+| `git merge --no-ff <分支>` | 强制生成合并提交,保留分支痕迹 |
+| `git merge --abort` | 放弃本次合并,回到合并前状态 |
+| `git rebase <分支>` | 变基:把当前分支的提交接到目标分支之后 |
+| `git rebase -i HEAD~3` | 交互式整理最近 3 次提交(合并/改信息/重排) |
+| `git rebase --abort` | 放弃变基 |
+| `git cherry-pick <哈希>` | 把某次提交复制到当前分支 |
+
+### 15.7 远程协作
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git remote -v` | 查看远程仓库地址 |
+| `git remote add origin <url>` | 添加名为 origin 的远程 |
+| `git remote set-url origin <url>` | 修改远程地址 |
+| `git remote remove origin` | 移除远程 |
+| `git remote prune origin` | 清理远程已删除分支的本地引用 |
+| `git fetch origin` | 拉取远程更新(不合并) |
+| `git fetch --prune` | 拉取并清理失效的远程分支引用 |
+| `git pull` | 拉取并合并(fetch + merge) |
+| `git pull --rebase` | 拉取并变基(历史更线性) |
+| `git push` | 推送当前分支 |
+| `git push -u origin <分支>` | 首次推送并建立跟踪关系 |
+| `git push origin --delete <分支>` | 删除远程分支 |
+| `git push --tags` | 推送所有本地标签 |
+| `git push --force-with-lease` | 安全强推(仅本地历史确认无误时使用) |
+
+### 15.8 撤销与回退
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git restore <文件>` | 丢弃工作区中该文件的改动 |
+| `git restore --staged <文件>` | 取消暂存,改动退回工作区 |
+| `git restore --source=<哈希> <文件>` | 把文件恢复为某次提交的版本 |
+| `git reset --soft HEAD~1` | 撤销最后一次提交,改动保留在暂存区 |
+| `git reset HEAD~1` | 撤销提交与暂存,改动保留在工作区(默认 mixed) |
+| `git reset --hard HEAD~1` | 撤销提交并丢弃改动(危险,不可恢复) |
+| `git reset --hard origin/main` | 强制对齐远端 main(危险) |
+| `git revert <哈希>` | 生成一个反向提交,安全撤销已推送内容 |
+| `git revert <A>..<B>` | 撤销一个提交区间 |
+| `git clean -n` | 预览将被删除的未跟踪文件 |
+| `git clean -fd` | 删除未跟踪文件与目录(危险) |
+
+### 15.9 标签(版本发布)
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git tag` | 列出本地标签 |
+| `git tag v1.0.0` | 创建轻量标签 |
+| `git tag -a v1.0.0 -m "首个版本"` | 创建附注标签(带说明与作者信息) |
+| `git show v1.0.0` | 查看标签详情 |
+| `git tag -d v1.0.0` | 删除本地标签 |
+| `git push origin v1.0.0` | 推送单个标签 |
+| `git push origin --delete v1.0.0` | 删除远程标签 |
+
+### 15.10 暂存现场(stash)
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git stash` | 收起当前未提交的改动 |
+| `git stash -u` | 连未跟踪文件一起收起 |
+| `git stash list` | 查看已保存的现场列表 |
+| `git stash pop` | 恢复最近一次现场并删除记录 |
+| `git stash apply stash@{1}` | 恢复指定现场,保留记录 |
+| `git stash drop stash@{0}` | 删除指定现场记录 |
+| `git stash clear` | 清空全部现场记录 |
+
+### 15.11 其他实用命令
+
+| 命令 | 作用 |
+| :--- | :--- |
+| `git worktree add ../目录 <分支>` | 同一仓库多目录并行开发 |
+| `git worktree list` | 查看所有工作树 |
+| `git worktree remove <目录>` | 移除工作树 |
+| `git bisect start` / `good` / `bad` | 二分查找引入缺陷的提交 |
+| `git count-objects -vH` | 查看仓库占用体积 |
+| `git gc` | 手动触发仓库垃圾回收与压缩 |
+| `git fsck` | 检查仓库对象完整性 |
+| `git archive --format=zip HEAD -o src.zip` | 导出当前提交的源码压缩包 |
+
+### 15.12 一条命令搞定的高频组合
+
+```bash
+# 提交并推送当前分支
+git add -A && git commit -m "说明" && git push
+
+# 同步远端并保持线性历史
+git pull --rebase && git push
+
+# 查看当前分支相对 main 的差异
+git diff main...HEAD --stat
+
+# 找出某行代码是哪个提交引入的
+git log -L 10,20:src/main.py
+
+# 误操作后找回丢失的提交
+git reflog                       # 找到哈希
+git switch -c rescue <哈希>       # 用该哈希建分支找回
+```
+
+---
+
 参考: [Git 官方文档](https://git-scm.com/doc) · [Pro Git(中文版)](https://git-scm.com/book/zh/v2)
 </content>
