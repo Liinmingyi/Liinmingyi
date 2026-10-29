@@ -100,6 +100,11 @@
     <td align="left">Markdown</td>
   </tr>
   <tr>
+    <td align="left"><a href="https://github.com/Liinmingyi/dsh-market">dsh-market(中文 Fork)</a></td>
+    <td align="left">DSH 插件市场:浏览、搜索、一键安装,已做中文本地化</td>
+    <td align="left">TypeScript · React</td>
+  </tr>
+  <tr>
     <td align="left"><a href="GIT_GUIDE.md">Git 使用方法与说明</a></td>
     <td align="left">常用命令速查、分支工作流、冲突处理</td>
     <td align="left">Git · Markdown</td>
